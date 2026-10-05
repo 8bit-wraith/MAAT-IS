@@ -1,16 +1,9 @@
 <script lang="ts">
   import { principles } from '$lib/stores/principles';
-  import type { PrincipleCategory } from '$lib/types/principles';
-  
-  let categories: PrincipleCategory[];
-  
-  principles.subscribe(value => {
-    categories = value;
-  });
 </script>
 
 <div class="grid gap-8 p-6">
-  {#each categories as category}
+  {#each $principles as category}
     <section class="space-y-4">
       <h2 class="text-2xl font-bold text-maat-gold">{category.title}</h2>
       <p class="text-stone-300">{category.description}</p>
